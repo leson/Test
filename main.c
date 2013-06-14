@@ -26,7 +26,8 @@ int main(void){
 //    int tmp=fac(10);
 //    printf("%d",tmp);
 
-    testConv();
+//    testConv();
+    forceConvert();
     return 0;
 }
 /**
@@ -96,6 +97,9 @@ void testConvert(){
     printf("%0.3f",dest);
 }
 
+/**
+ *打印ascii 码值。
+ */
 void printAscii(){
     int i ;
     for(i= 30; i < 127; i++ ) {
@@ -143,5 +147,18 @@ void testConv(){
 	CardNumber2str(id, id_str);
 //	str2CardNumber(id_str, id2);
     printf("%s",id_str);
+}
+
+/**
+ *强制类型转换（宽类型转成窄类型）
+ */
+void forceConvert(){
+    float f=1.63;
+    double d=2.14;
+    long l=4.1;
+    int i=2.2;
+
+    int tmp=(int)(f*100);
+    printf("%d",tmp);
 }
 
