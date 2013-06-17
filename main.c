@@ -19,7 +19,7 @@ int main(void){
 
    */
    //oper();
-//   testSprintf();
+    testSprintf();
 //    testConvert();
 //    printAscii();
 
@@ -27,7 +27,7 @@ int main(void){
 //    printf("%d",tmp);
 
 //    testConv();
-    forceConvert();
+//    forceConvert();
     return 0;
 }
 /**
@@ -77,13 +77,18 @@ char * int2char(int inta){
     char *a="20131202 14:25:55";
     char *b="1234";
     int i=123,k=4567;
+    long ll = 323;
+    float fl=(float)ll/100;
+    float ff=2.12;
 //    sprintf(dest,"%6.6s",a+2);//截取从开始位置的前六位；
 //    sprintf(dest,"%06.6s",b+1);//截取从开始位置的前六位,不够六位的，左补0；
 //    sprintf(dest,"%06d",i);//左边补0
 //    sprintf(dest,"%-6d|",k);//右补空格
-    sprintf(dest,"%8s|%8s",a,b);
+//    sprintf(dest,"%8s|%8s",a,b);
 //    sprintf(dest,"%8d|%8d|",i,k);//整形转换成字符串，并拼接到一起。
 //    sprintf(dest,"%6s|%4s|%02s|",a,b,"0");
+    sprintf(dest,"%.2f",fl);
+//    sprintf(dest,"%.2f",ff);
     printf("%s\n",dest);
   }
 
@@ -108,7 +113,7 @@ void printAscii(){
 }
 /**
  * 递归实现n的阶乘。
- * @param n
+ * @param ngasNum
  * @return
  */
 int fac(int n){
@@ -153,12 +158,13 @@ void testConv(){
  *强制类型转换（宽类型转成窄类型）
  */
 void forceConvert(){
-    float f=1.63;
-    double d=2.14;
+    float f=1.61;
+//    double d=2.14;
     long l=4.1;
-    int i=2.2;
+//    int i=2.2;
 
-    int tmp=(int)(f*100);
-    printf("%d",tmp);
+//    int tmp=(int)(f*10000);
+    int tmp=(int)((f+0.005)*100);
+    printf("float to int %d;\n long to int %.2f;\n",tmp,l);
 }
 
