@@ -167,4 +167,40 @@ void forceConvert(){
     int tmp=(int)((f+0.005)*100);
     printf("float to int %d;\n long to int %.2f;\n",tmp,l);
 }
+/**
+ *得到字符串长度。
+ */
+int getStrLen(char* str){
+    int ret=0;
+    while(str[ret]!='\0'){
+        ret++;
+    }
+    return ret;
+}
+/**
+ *字符串复制。
+ */
+void copyStr(char* str1,char* str2){
+   while(*str2!='\0'){
+        *(str1++)=*(str2++);
+   }
+   *str1='\0';//数组最后一位加上null 构成字符串。
+}
+/**
+ *交换字符串。
+ */
+void swapStr(char* s1,char* s2){
+    char *temp;
+    copyStr(temp,s1);
+    copyStr(s1,s2);
+    copyStr(s2,temp);
+}
 
+/**
+ *二维数组测试
+ */
+void testArr(){
+    char arrs[3][3]={"姓名","性别","兴趣"};
+
+
+}
